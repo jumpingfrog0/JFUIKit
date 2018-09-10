@@ -28,7 +28,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (Drawing)
+@interface UIView (JFDraw)
 
 + (UIView *)jf_topLine;
 + (UIView *)jf_bottomLineWithOffsetX:(CGFloat)offsetX containerHeight:(CGFloat)height;

@@ -26,14 +26,14 @@
 //  THE SOFTWARE.
 //
 
-#import "UIView+Drawing.h"
+#import "UIView+JFDraw.h"
 #import <objc/runtime.h>
 #import "UIImage+JFUIKit.h"
 
 static NSString *const kProgressLayerKey = @"kProgressLayerKey";
 static NSString *const kShapeLayerKey    = @"kShapeLayerKey";
 
-@implementation UIView (Drawing)
+@implementation UIView (JFDraw)
 
 + (UIView *)jf_topLine {
     UIImage *image = [UIImage jf_imageNamedInMZDUIKitBundle:@"horizontal-separator-default"];
