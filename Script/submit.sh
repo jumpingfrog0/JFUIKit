@@ -1,6 +1,6 @@
 #! /bin/bash
 
-PROJ=""
+PROJ="JFUIKit"
 POD_SPEC="${PROJ}.podspec"
 POD_REPO="master"
 VERSION=$1
