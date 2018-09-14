@@ -30,14 +30,10 @@
 
 @interface UINavigationBar (JFExtension)
 
-- (UIColor *)jf_tintColor;
-- (void)setJf_tintColor:(UIColor *)color;
+@property (nonatomic, strong) UIColor *jf_tintColor;
 
 - (void)jf_setBackgroundColor:(UIColor *)backgroundColor;
 - (void)jf_setCustomBackgroundColor:(UIColor *)backgroundColor;
-
-- (UIView *)jf_overlay;
-- (void)setJf_overlay:(UIView *)overlay;
 
 - (void)jf_reset;
 @end

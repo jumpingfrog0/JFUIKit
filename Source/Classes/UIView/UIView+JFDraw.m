@@ -123,8 +123,8 @@ static NSString *const kShapeLayerKey    = @"kShapeLayerKey";
                                                      clockwise:YES];
     progressLayer.path = [path CGPath];
     [self.layer addSublayer:progressLayer];
-
-    self.jf_progressLayer = progressLayer;
+     
+    [self jf_setProgressLayer:progressLayer];
 }
 
 - (void)jf_addCircleLayerWithColor:(UIColor *)color width:(CGFloat)width radius:(CGFloat)radius {
@@ -152,7 +152,7 @@ static NSString *const kShapeLayerKey    = @"kShapeLayerKey";
     shapeLayer.path = [path CGPath];
     [self.layer addSublayer:shapeLayer];
 
-    self.jf_shapeLayer = shapeLayer;
+    [self jf_setShapeLayer:shapeLayer];
 }
 
 - (void)jf_addRectLayerWithColor:(UIColor *)color width:(CGFloat)width inRect:(CGRect)rect {
@@ -172,12 +172,12 @@ static NSString *const kShapeLayerKey    = @"kShapeLayerKey";
     shapeLayer.path = [path CGPath];
     [self.layer addSublayer:shapeLayer];
 
-    self.jf_shapeLayer = shapeLayer;
+    [self jf_setShapeLayer:shapeLayer];
 }
 
 #pragma mark -
 
-- (void)setJf_shapeLayer:(CAShapeLayer *)shapeLayer {
+- (void)jf_setShapeLayer:(CAShapeLayer *)shapeLayer {
     objc_setAssociatedObject(self, &kShapeLayerKey, shapeLayer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -185,7 +185,7 @@ static NSString *const kShapeLayerKey    = @"kShapeLayerKey";
     return (CAShapeLayer *) objc_getAssociatedObject(self, &kShapeLayerKey);
 }
 
-- (void)setJf_progressLayer:(CAShapeLayer *)progressLayer {
+- (void)jf_setProgressLayer:(CAShapeLayer *)progressLayer {
     objc_setAssociatedObject(self, &kProgressLayerKey, progressLayer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
