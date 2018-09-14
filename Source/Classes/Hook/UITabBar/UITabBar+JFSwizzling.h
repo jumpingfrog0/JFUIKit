@@ -1,10 +1,8 @@
 //
-//  JFUIKit.h
-//  JFUIKit
+//  UITabBar+JFSwizzling.h
+//  ObjcExtension
 //
-//  Created by jumpingfrog0 on 2018/09/10.
-//
-//
+//  Created by jumpingfrog0 on 2017/08/22.
 //  Copyright (c) 2017 Jumpingfrog0 LLC
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,22 +24,8 @@
 //  THE SOFTWARE.
 //
 
-#ifndef JFUIKit_h
-#define JFUIKit_h
+#import <UIKit/UIKit.h>
 
-#import "UIApplication+JF.h"
-#import "UIBarButtonItem+JF.h"
-#import "UIButton+JF.h"
-#import "UIColor+JF.h"
-#import "UIDevice+JF.h"
-#import "UIImage+JF.h"
-#import "UILabel+JF.h"
-#import "UINavigationBar+JF.h"
-#import "UINavigationController+JF.h"
-#import "UINavigationItem+JF.h"
-#import "UIScrollView+JF.h"
-#import "UITextField+JF.h"
-#import "UIView+JF.h"
-#import "UIViewController+JF.h"
+@interface UITabBar (JFSwizzling)
 
-#endif /* JFUIKit_h */
+@end

@@ -1,8 +1,8 @@
 //
-//  JFUIKit.h
+//  UIViewController+JFSwipeBack.h
 //  JFUIKit
 //
-//  Created by jumpingfrog0 on 2018/09/10.
+//  Created by jumpingfrog0 on 2018/09/15.
 //
 //
 //  Copyright (c) 2017 Jumpingfrog0 LLC
@@ -26,22 +26,7 @@
 //  THE SOFTWARE.
 //
 
-#ifndef JFUIKit_h
-#define JFUIKit_h
+#import <UIKit/UIKit.h>
 
-#import "UIApplication+JF.h"
-#import "UIBarButtonItem+JF.h"
-#import "UIButton+JF.h"
-#import "UIColor+JF.h"
-#import "UIDevice+JF.h"
-#import "UIImage+JF.h"
-#import "UILabel+JF.h"
-#import "UINavigationBar+JF.h"
-#import "UINavigationController+JF.h"
-#import "UINavigationItem+JF.h"
-#import "UIScrollView+JF.h"
-#import "UITextField+JF.h"
-#import "UIView+JF.h"
-#import "UIViewController+JF.h"
-
-#endif /* JFUIKit_h */
+@interface UIViewController (JFSwipeBack)
+@end

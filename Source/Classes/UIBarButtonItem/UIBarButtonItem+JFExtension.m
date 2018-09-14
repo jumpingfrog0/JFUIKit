@@ -26,11 +26,9 @@
 //  THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 #import "UIBarButtonItem+JFExtension.h"
 #import "UIImage+JFUIKit.h"
-#import "UIColor+JF.h"
 #import "UINavigationBar+JF.h"
 
 #pragma mark - BKControlWrapper
@@ -281,7 +279,7 @@ typedef NS_ENUM(NSInteger, MZDButtonImagePosition) {
     badgeButton.frame       = frame;
 
     badgeButton.center          = CGPointMake(customView.frame.size.width - padding, 0.0);
-    badgeButton.backgroundColor = [UIColor jf_colorWithHex:@"#f43541"];
+    badgeButton.backgroundColor = [UIColor redColor];
     [badgeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     badgeButton.layer.cornerRadius     = 9.0;
     badgeButton.clipsToBounds          = YES;

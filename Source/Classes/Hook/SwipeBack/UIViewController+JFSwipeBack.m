@@ -1,8 +1,8 @@
 //
-//  JFUIKit.h
+//  UIViewController+JFSwipeBack.m
 //  JFUIKit
 //
-//  Created by jumpingfrog0 on 2018/09/10.
+//  Created by jumpingfrog0 on 2018/09/15.
 //
 //
 //  Copyright (c) 2017 Jumpingfrog0 LLC
@@ -26,22 +26,24 @@
 //  THE SOFTWARE.
 //
 
-#ifndef JFUIKit_h
-#define JFUIKit_h
+#import "UIViewController+JFSwipeBack.h"
+#import <JFFoundation/NSObject+JFSwizzling.h>
 
-#import "UIApplication+JF.h"
-#import "UIBarButtonItem+JF.h"
-#import "UIButton+JF.h"
-#import "UIColor+JF.h"
-#import "UIDevice+JF.h"
-#import "UIImage+JF.h"
-#import "UILabel+JF.h"
-#import "UINavigationBar+JF.h"
-#import "UINavigationController+JF.h"
-#import "UINavigationItem+JF.h"
-#import "UIScrollView+JF.h"
-#import "UITextField+JF.h"
-#import "UIView+JF.h"
-#import "UIViewController+JF.h"
+@implementation UIViewController (JFSwipeBack)
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self jf_changeSelector:@selector(viewDidAppear:) withSelector:@selector(jf_swizzled_viewDidAppear:)];
+    });
+}
 
-#endif /* JFUIKit_h */
+- (void)jf_swizzled_viewDidAppear:(BOOL)animated {
+    [self jf_swizzled_viewDidAppear:animated];
+
+    // fix swipe back function when 3D-touch is enabled.
+    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC));
+    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    });
+}
+@end

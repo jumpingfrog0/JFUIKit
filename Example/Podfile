@@ -1,6 +1,7 @@
 
 target 'JFUIKit_Example' do
   pod 'JFUIKit', :path => '../'
+  pod 'JFUIKit/Hook', :path => '../'
 
   target 'JFUIKit_Tests' do
     inherit! :search_paths

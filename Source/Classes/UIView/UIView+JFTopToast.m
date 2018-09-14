@@ -27,11 +27,10 @@
 //
 
 #import "UIView+JFTopToast.h"
+#import <objc/runtime.h>
 #import "UIColor+JFExtension.h"
 #import "UIDevice+JFInfo.h"
-#import "UIColor+JFExtension.h"
 #import "UIApplication+JF.h"
-#import <objc/runtime.h>
 
 static CGFloat const kToastHeight =  32.0f;
 static NSString *const kBackgroundColorKey = @"MZDTopToast_BackgroundColorKey";
