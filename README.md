@@ -5,11 +5,11 @@
 [![License](https://img.shields.io/cocoapods/l/JFUIKit.svg?style=flat)](https://cocoapods.org/pods/JFUIKit)
 [![Platform](https://img.shields.io/cocoapods/p/JFUIKit.svg?style=flat)](https://cocoapods.org/pods/JFUIKit)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+`JFUIKit` is a extension of Cocoa Touch UIKit framework wrote in Objective-C.
 
 ## Requirements
+
+* iOS 9.0 or later.
 
 ## Installation
 
@@ -17,7 +17,13 @@ JFUIKit is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'JFUIKit'
+pod 'JFUIKit', '~> 0.2.0'
+```
+
+JFUIKit extend some features with hooks(Method Swizzling), which was wrapped as a Pod subspec. JFUIKit default is not contain hooks. To install it, simply add the following line to your Podfile:
+
+```ruby
+pod 'JFUIKit/Hook', '~> 0.2.0'
 ```
 
 ## Author
