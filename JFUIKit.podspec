@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JFUIKit'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'Cocoa Touch UIKit framework categories.'
 
 # This description is used to generate tags and improve search results.
@@ -33,7 +33,7 @@ Cocoa Touch UIKit framework categories wrote in Objective-C.
   }
 
   s.frameworks = 'Foundation', 'UIKit'
-  s.dependency 'JFFoundation', '~> 0.1.0'
+  s.dependency 'JFFoundation', '~> 0.2.0'
   s.default_subspecs = 'UIApplication', 'UIBarButtonItem', 'UIButton', 'UIColor', 'UIDevice', 'UIImage', 'UILabel',
   	'UINavigationBar', 'UINavigationController', 'UINavigationItem', 'UIScrollView', 'UITextField', 'UIView', 'UIViewController'
 
