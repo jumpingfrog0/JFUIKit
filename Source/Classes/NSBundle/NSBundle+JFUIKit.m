@@ -33,10 +33,6 @@
     NSString *mainBundlePath = [NSBundle mainBundle].bundlePath;
     NSString *bundlePath = [NSString stringWithFormat:@"%@/%@",mainBundlePath,@"JFUIKit.bundle"];
     NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
-    if (!bundle) {
-        bundlePath = [NSString stringWithFormat:@"%@/%@",mainBundlePath,@"Frameworks/JFUIKit.framework/JFUIKit.bundle"];
-        bundle = [NSBundle bundleWithPath:bundlePath];
-    }
     return bundle;
 }
 @end
