@@ -108,7 +108,7 @@
  * 设备是否是 iPhone 5 或 5s
  * @return 返回 YES，反之 NO
  */
-+ (BOOL)mzd_isIphone5s;
++ (BOOL)jf_isIphone5s;
 
 /**
  * 设备是否是 iPhone X

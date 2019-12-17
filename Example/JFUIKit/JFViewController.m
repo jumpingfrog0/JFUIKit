@@ -7,8 +7,10 @@
 //
 
 #import "JFViewController.h"
+#import <JFUIKit/JFUIKit.h>
 
 @interface JFViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -17,7 +19,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    self.imageView.image = [UIImage jf_imageNamedInJFUIKitBundle:@"nav-bar-dark-back-btn"];
 }
 
 - (void)didReceiveMemoryWarning

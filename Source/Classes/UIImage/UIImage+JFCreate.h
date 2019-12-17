@@ -64,7 +64,7 @@
  * @param endPoint 结束位置
  * @param radius 圆角
  */
-+ (UIImage *)mzd_gradientImageWithColors:(NSArray *)colors
++ (UIImage *)jf_gradientImageWithColors:(NSArray *)colors
                                    size:(CGSize)size
                               locations:(NSArray<NSNumber *> *)locations
                              startPoint:(CGPoint)startPoint

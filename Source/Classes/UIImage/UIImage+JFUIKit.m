@@ -30,7 +30,7 @@
 #import "NSBundle+JFUIKit.h"
 
 @implementation UIImage (JFUIKit)
-+ (UIImage *)jf_imageNamedInMZDUIKitBundle:(NSString *)imageName {
++ (UIImage *)jf_imageNamedInJFUIKitBundle:(NSString *)imageName {
     NSBundle *bundle = [NSBundle jf_UIKit_bundle];
     return [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
 }

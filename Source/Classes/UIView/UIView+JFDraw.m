@@ -36,7 +36,7 @@ static NSString *const kShapeLayerKey    = @"kShapeLayerKey";
 @implementation UIView (JFDraw)
 
 + (UIView *)jf_topLine {
-    UIImage *image = [UIImage jf_imageNamedInMZDUIKitBundle:@"horizontal-separator-default"];
+    UIImage *image = [UIImage jf_imageNamedInJFUIKitBundle:@"horizontal-separator-default"];
     CGRect frame =
                     CGRectMake(0.0, 0.0, [UIScreen mainScreen].bounds.size.width, ceilf(image.size.height / [UIScreen mainScreen].scale));
     UIImageView *imageView     = [[UIImageView alloc] initWithFrame:frame];
@@ -47,7 +47,7 @@ static NSString *const kShapeLayerKey    = @"kShapeLayerKey";
 }
 
 + (UIView *)jf_bottomLineWithOffsetX:(CGFloat)offsetX containerHeight:(CGFloat)height {
-    UIImage *image = [UIImage jf_imageNamedInMZDUIKitBundle:@"horizontal-separator-default"];
+    UIImage *image = [UIImage jf_imageNamedInJFUIKitBundle:@"horizontal-separator-default"];
     CGRect frame   = CGRectMake(offsetX,
             height - image.size.height,
             [UIScreen mainScreen].bounds.size.width - offsetX,

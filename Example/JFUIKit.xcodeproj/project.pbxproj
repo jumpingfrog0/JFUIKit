@@ -332,7 +332,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-JFUIKit_Example/Pods-JFUIKit_Example-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-JFUIKit_Example/Pods-JFUIKit_Example-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/JFUIKit/JFUIKit.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -341,7 +341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JFUIKit_Example/Pods-JFUIKit_Example-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JFUIKit_Example/Pods-JFUIKit_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -28,8 +28,8 @@
 
 #import <UIKit/UIKit.h>
 
-FOUNDATION_EXPORT NSString *const kMZDSaveImageToPhotosAlbumSuccessNotification;
-FOUNDATION_EXPORT NSString *const kMZDSaveImageToPhotosAlbumFailureNotification;
+FOUNDATION_EXPORT NSString *const kJFSaveImageToPhotosAlbumSuccessNotification;
+FOUNDATION_EXPORT NSString *const kJFSaveImageToPhotosAlbumFailureNotification;
 
 @interface UIImage (JFExtension)
 
@@ -64,5 +64,5 @@ FOUNDATION_EXPORT NSString *const kMZDSaveImageToPhotosAlbumFailureNotification;
 /**
  * 矫正旋转
  */
-- (UIImage *)mzd_adjustRotation;
+- (UIImage *)jf_adjustRotation;
 @end

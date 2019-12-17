@@ -73,7 +73,7 @@
     return image;
 }
 
-+ (UIImage *)mzd_gradientImageWithColors:(NSArray *)colors
++ (UIImage *)jf_gradientImageWithColors:(NSArray *)colors
                                    size:(CGSize)size
                               locations:(NSArray<NSNumber *> *)locations
                              startPoint:(CGPoint)startPoint

@@ -1,5 +1,5 @@
 //
-//  UITextField+MZD.h
+//  UITextField+JF.h
 //  JFUIKit
 //
 //  Created by jumpingfrog0 on 2018/08/02.
@@ -26,9 +26,9 @@
 //  THE SOFTWARE.
 //
 
-#ifndef UITextField_MZD_h
-#define UITextField_MZD_h
+#ifndef UITextField_JF_h
+#define UITextField_JF_h
 
 #import "UITextField+JFExtension.h"
 
-#endif /* UITextField_MZD_h */
+#endif /* UITextField_JF_h */

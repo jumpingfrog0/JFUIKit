@@ -33,7 +33,7 @@
 #import "UIApplication+JF.h"
 
 static CGFloat const kToastHeight =  32.0f;
-static NSString *const kBackgroundColorKey = @"MZDTopToast_BackgroundColorKey";
+static NSString *const kBackgroundColorKey = @"JFTopToast_BackgroundColorKey";
 static CGFloat const kAnimationDuration = 0.25f;
 static CGFloat const kDismissDelayDuration = 2.0f;
 

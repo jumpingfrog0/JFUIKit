@@ -1,5 +1,5 @@
 //
-//  UIImage+MZD.h
+//  UIImage+JF.h
 //  JFUIKit
 //
 //  Created by jumpingfrog0 on 2018/08/02.

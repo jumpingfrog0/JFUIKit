@@ -63,23 +63,23 @@
     }
 }
 
-+ (BOOL)jf_textField:(UITextField *)textField range:(NSRange)range string:(NSString *)string charsType:(MZDTextFieldCharsType)charsType maxLength:(NSInteger)maxLength separatorIndexs:(NSArray *)indexs separator:(NSString *)separator {
++ (BOOL)jf_textField:(UITextField *)textField range:(NSRange)range string:(NSString *)string charsType:(JFTextFieldCharsType)charsType maxLength:(NSInteger)maxLength separatorIndexs:(NSArray *)indexs separator:(NSString *)separator {
 
     if ([string isEqualToString:separator]) return NO;
 
     // 添加限制条件,只能输入这个字符串内的字符
     NSString *allowChar;
     switch (charsType) {
-        case MZDTextFieldCharsTypeNumeral:
+        case JFTextFieldCharsTypeNumeral:
             allowChar = @"0123456789\b";
             break;
-        case MZDTextFieldCharsTypeLetter:
+        case JFTextFieldCharsTypeLetter:
             allowChar = @"qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM\b";
             break;
-        case MZDTextFieldCharsTypeIdentityCard:
+        case JFTextFieldCharsTypeIdentityCard:
             allowChar = @"0123456789Xx\b";
             break;
-        case MZDTextFieldCharsTypeNumeralAndLetter:
+        case JFTextFieldCharsTypeNumeralAndLetter:
             allowChar = @"0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM\b";
             break;
         default:
@@ -87,7 +87,7 @@
     }
 
     NSCharacterSet *characterSet;
-    if (charsType != MZDTextFieldCharsTypeAllChar) {
+    if (charsType != JFTextFieldCharsTypeAllChar) {
         characterSet = [NSCharacterSet characterSetWithCharactersInString:allowChar];
         string = [string stringByReplacingOccurrencesOfString:separator withString:@""];
         if ([string rangeOfCharacterFromSet:[characterSet invertedSet]].location != NSNotFound) {
@@ -145,7 +145,7 @@
     }
     else if (string.length > 0) {
         NSString *str;
-        if (charsType != MZDTextFieldCharsTypeAllChar) {
+        if (charsType != JFTextFieldCharsTypeAllChar) {
             str = [textField.text stringByTrimmingCharactersInSet:[characterSet invertedSet]];
         }
         str = [textField.text stringByReplacingOccurrencesOfString:separator withString:@""];

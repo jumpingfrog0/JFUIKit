@@ -29,5 +29,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UIImage (JFUIKit)
-+ (UIImage *)jf_imageNamedInMZDUIKitBundle:(NSString *)imageName;
++ (UIImage *)jf_imageNamedInJFUIKitBundle:(NSString *)imageName;
 @end

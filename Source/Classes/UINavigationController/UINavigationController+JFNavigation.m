@@ -1,4 +1,4 @@
-//  UINavigationController+MZDNavigation.m
+//  UINavigationController+JFNavigation.m
 //  JFUIKit
 //
 //  Created by jumpingfrog0 on 2018/08/02.

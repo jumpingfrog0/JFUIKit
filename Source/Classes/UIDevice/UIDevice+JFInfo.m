@@ -214,7 +214,7 @@
     return [[[UIDevice currentDevice] systemVersion] floatValue] < version;
 }
 
-+ (BOOL)mzd_isIphone5s
++ (BOOL)jf_isIphone5s
 {
     struct utsname systemInfo;
     uname(&systemInfo);

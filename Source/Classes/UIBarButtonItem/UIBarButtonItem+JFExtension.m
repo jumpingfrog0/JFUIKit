@@ -97,24 +97,24 @@ static const void *BKControlHandlersKey = &BKControlHandlersKey;
 
 @end
 
-#pragma mark - MZDButton
+#pragma mark - JFButton
 
-typedef NS_ENUM(NSInteger, MZDButtonImagePosition) {
-    MZDButtonImagePositionLeft = 0,
-    MZDButtonImagePositionRight
+typedef NS_ENUM(NSInteger, JFButtonImagePosition) {
+    JFButtonImagePositionLeft = 0,
+    JFButtonImagePositionRight
 };
 
-@interface MZDButton : UIButton
-@property (nonatomic, assign) MZDButtonImagePosition imagePosition;
+@interface JFButton : UIButton
+@property (nonatomic, assign) JFButtonImagePosition imagePosition;
 @end
 
-@implementation MZDButton
+@implementation JFButton
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
 
-    if (self.imagePosition == MZDButtonImagePositionLeft) return;
+    if (self.imagePosition == JFButtonImagePositionLeft) return;
 
     CGRect imageFrame = self.imageView.frame;
     CGRect labelFrame = self.titleLabel.frame;
@@ -133,7 +133,7 @@ typedef NS_ENUM(NSInteger, MZDButtonImagePosition) {
 @implementation UIBarButtonItem (JFExtension)
 
 + (UIBarButtonItem *)jf_darkBackBarButtonItemWithTitle:(NSString *)title handler:(void (^)(id sender))action {
-    UIImage *image = [UIImage jf_imageNamedInMZDUIKitBundle:@"nav-bar-dark-back-btn"];
+    UIImage *image = [UIImage jf_imageNamedInJFUIKitBundle:@"nav-bar-dark-back-btn"];
 
     NSString *str = title;
     
@@ -149,7 +149,7 @@ typedef NS_ENUM(NSInteger, MZDButtonImagePosition) {
 }
 
 + (UIBarButtonItem *)jf_whiteBackBarButtonItemWithTitle:(NSString *)title handler:(void (^)(id sender))action {
-    UIImage *image = [UIImage jf_imageNamedInMZDUIKitBundle:@"nav-bar-white-back-btn"];
+    UIImage *image = [UIImage jf_imageNamedInJFUIKitBundle:@"nav-bar-white-back-btn"];
     
     NSString *str = title;
     
@@ -165,12 +165,12 @@ typedef NS_ENUM(NSInteger, MZDButtonImagePosition) {
 }
 
 + (UIBarButtonItem *)jf_whiteCloseBarButtonItemWithHandler:(void (^)(id sender))action {
-    UIImage *image = [UIImage jf_imageNamedInMZDUIKitBundle:@"nav-bar-white-close-btn"];
+    UIImage *image = [UIImage jf_imageNamedInJFUIKitBundle:@"nav-bar-white-close-btn"];
     return [self jf_barButtonItemWithImage:image handler:action];
 }
 
 + (UIBarButtonItem *)jf_darkCloseBarButtonItemWithHandler:(void (^)(id sender))action {
-    UIImage *image = [UIImage jf_imageNamedInMZDUIKitBundle:@"nav-bar-dark-close-btn"];
+    UIImage *image = [UIImage jf_imageNamedInJFUIKitBundle:@"nav-bar-dark-close-btn"];
     return [self jf_barButtonItemWithImage:image handler:action];
 }
 
@@ -194,7 +194,7 @@ typedef NS_ENUM(NSInteger, MZDButtonImagePosition) {
 + (UIBarButtonItem *)jf_barButtonItemWithImage:(UIImage *)image
                                     padding:(CGFloat)padding
                                     handler:(void (^)(id sender))action {
-    MZDButton *button = [MZDButton buttonWithType:UIButtonTypeCustom];
+    JFButton *button = [JFButton buttonWithType:UIButtonTypeCustom];
     button.frame                     = CGRectMake(0, 0, image.size.width + 2 * padding, image.size.height + padding);
     button.showsTouchWhenHighlighted = YES;
     [button setImage:image forState:UIControlStateNormal];

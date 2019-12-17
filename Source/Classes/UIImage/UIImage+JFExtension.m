@@ -29,8 +29,8 @@
 #import "UIImage+JFExtension.h"
 #import "UIImage+JFResize.h"
 
-NSString *const kMZDSaveImageToPhotosAlbumSuccessNotification = @"kMZDSaveImageToPhotosAlbumSuccessNotification";
-NSString *const kMZDSaveImageToPhotosAlbumFailureNotification = @"kMZDSaveImageToPhotosAlbumFailureNotification";
+NSString *const kJFSaveImageToPhotosAlbumSuccessNotification = @"kJFSaveImageToPhotosAlbumSuccessNotification";
+NSString *const kJFSaveImageToPhotosAlbumFailureNotification = @"kJFSaveImageToPhotosAlbumFailureNotification";
 
 @implementation UIImage (JFExtension)
 
@@ -123,9 +123,9 @@ NSString *const kMZDSaveImageToPhotosAlbumFailureNotification = @"kMZDSaveImageT
 {
     NSLog(@"image = %@, error = %@, contextInfo = %@", image, error, contextInfo);
     if (!error) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kMZDSaveImageToPhotosAlbumSuccessNotification object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kJFSaveImageToPhotosAlbumSuccessNotification object:nil];
     } else {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kMZDSaveImageToPhotosAlbumFailureNotification object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kJFSaveImageToPhotosAlbumFailureNotification object:nil];
     }
 }
 
@@ -164,7 +164,7 @@ CGFloat radiansToDegrees(CGFloat radians) {return radians * 180/M_PI;};
     return newImage;
 }
 
-- (UIImage *)mzd_adjustRotation {
+- (UIImage *)jf_adjustRotation {
     // No-op if the orientation is already correct
     if (self.imageOrientation == UIImageOrientationUp) return self;
     

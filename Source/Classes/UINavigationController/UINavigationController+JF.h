@@ -1,5 +1,5 @@
 //
-//  UINavigationController+MZD.h
+//  UINavigationController+JF.h
 //  JFUIKit
 //
 //  Created by jumpingfrog0 on 2018/08/02.
@@ -26,10 +26,10 @@
 //  THE SOFTWARE.
 //
 
-#ifndef UINavigationController_MZD_h
-#define UINavigationController_MZD_h
+#ifndef UINavigationController_JF_h
+#define UINavigationController_JF_h
 
 #import "UINavigationController+JFNavigation.h"
 #import "UINavigationController+JFStyle.h"
 
-#endif /* UINavigationController_MZD_h */
+#endif /* UINavigationController_JF_h */
