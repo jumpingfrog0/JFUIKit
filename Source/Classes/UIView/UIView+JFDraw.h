@@ -78,14 +78,17 @@
  * @param rect 矩形区域
  */
 - (void)jf_addRectLayerWithColor:(UIColor *)color width:(CGFloat)width inRect:(CGRect)rect;
-@end
 
-@interface UIView (JFDrawRectBlock)
-typedef void(^JFDrawRectBlock)(CGRect rect);
+#pragma mark -
+/**
+ *  设置部分圆角(绝对布局)
+ *
+ *  @param corners 需要设置为圆角的角 UIRectCornerTopLeft | UIRectCornerTopRight | UIRectCornerBottomLeft | UIRectCornerBottomRight | UIRectCornerAllCorners
+ *  @param radius   需要设置的圆角大小 例如 CGSizeMake(20.0f, 20.0f)
+ */
+- (void)jf_addRoundedCorners:(UIRectCorner)corners
+                  withRadius:(CGFloat)radius;
 
-// Creates and return a UIView (of frame CGRectZero) with a block that gets called on drawRect.
-+ (UIView *)jf_viewWithDrawRectBlock:(JFDrawRectBlock)block;
-
-// Creates and return a UIView with a block that gets called on drawRect.
-+ (UIView *)jf_viewWithFrame:(CGRect)frame drawRectBlock:(JFDrawRectBlock)block;
+- (void)jf_setGradientLayer:(UIColor *)startColor endColor:(UIColor *)endColor isHorizontal:(BOOL)isHorizontal;
+- (void)jf_setGradientLayer:(UIColor *)startColor endColor:(UIColor *)endColor rect:(CGRect)rect isHorizontal:(BOOL)isHorizontal;
 @end

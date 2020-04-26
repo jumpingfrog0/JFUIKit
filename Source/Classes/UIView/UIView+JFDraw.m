@@ -193,4 +193,41 @@ static NSString *const kShapeLayerKey    = @"kShapeLayerKey";
     return (CAShapeLayer *) objc_getAssociatedObject(self, &kProgressLayerKey);
 }
 
+#pragma mark -
+
+- (void)jf_addRoundedCorners:(UIRectCorner)corners
+                withRadius:(CGFloat)radius {
+    UIBezierPath *rounded = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:corners cornerRadii:CGSizeMake(radius, radius)];
+    CAShapeLayer *shape = [[CAShapeLayer alloc] init];
+    [shape setPath:rounded.CGPath];
+
+    self.layer.mask = shape;
+}
+
+- (void)jf_setGradientLayer:(UIColor *)startColor endColor:(UIColor *)endColor isHorizontal:(BOOL)isHorizontal {
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = self.bounds;
+    gradientLayer.startPoint = isHorizontal ? CGPointMake(0, 0.5) : CGPointMake(0.5, 0);
+    gradientLayer.endPoint = isHorizontal ? CGPointMake(1, 0.5) : CGPointMake(0.5, 1);
+    gradientLayer.colors = @[(__bridge id)startColor.CGColor, (__bridge id)endColor.CGColor];
+    gradientLayer.locations = @[@(0.0f), @(1.0f)];
+    
+    if (!CGRectEqualToRect(self.bounds, CGRectZero)) {
+        [self.layer insertSublayer:gradientLayer atIndex:0];
+    }
+}
+
+- (void)jf_setGradientLayer:(UIColor *)startColor endColor:(UIColor *)endColor rect:(CGRect)rect isHorizontal:(BOOL)isHorizontal {
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = rect;
+    gradientLayer.startPoint = isHorizontal ? CGPointMake(0, 0.5) : CGPointMake(0.5, 0);
+    gradientLayer.endPoint = isHorizontal ? CGPointMake(1, 0.5) : CGPointMake(0.5, 1);
+    gradientLayer.colors = @[(__bridge id)startColor.CGColor, (__bridge id)endColor.CGColor];
+    gradientLayer.locations = @[@(0.0f), @(1.0f)];
+    
+    if (!CGRectEqualToRect(rect, CGRectZero)) {
+        [self.layer insertSublayer:gradientLayer atIndex:0];
+    }
+}
+
 @end
