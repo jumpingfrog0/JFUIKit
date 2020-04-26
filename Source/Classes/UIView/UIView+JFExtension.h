@@ -45,4 +45,9 @@
  */
 - (void)jf_removeLayerAnimationsRecursively;
 
+/**
+ * get current window
+ */
+- (UIWindow *)jf_getCurrentWindow;
+
 @end

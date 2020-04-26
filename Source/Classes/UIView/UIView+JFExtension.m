@@ -82,4 +82,41 @@
         [obj jf_removeLayerAnimationsRecursively];
     }];
 }
+
+- (UIWindow *)jf_getCurrentWindow {
+    UIWindow *window = nil;
+    // check device
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) { // iPhone
+        // get key window
+        for (UIWindow *a_w in [UIApplication sharedApplication].windows) {
+            if (a_w.isKeyWindow) {
+                window = a_w;
+                break;
+            }
+        }
+        
+        // if key window is not exist
+        if (!window) {
+            window = [UIApplication sharedApplication].windows.firstObject;
+            
+        }
+        if (!window) {   // if window still is not exists
+            if ([[UIApplication sharedApplication].delegate respondsToSelector:@selector(window)]) {
+                window = [UIApplication sharedApplication].delegate.window;
+            }
+        }
+    } else if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) { // iPad
+        // get key window
+        for (UIWindow *a_w in [UIApplication sharedApplication].windows) {
+            if (a_w.isKeyWindow) {
+                window = a_w;
+                break;
+            }
+        }
+        if (!window) {  // 如果也没取到keyWindow，拿第一个Window
+            window = [UIApplication sharedApplication].windows.firstObject;
+        }
+    }
+    return window;
+}
 @end
