@@ -25,7 +25,14 @@ appledoc -o ./Docs \
 ./$PROJ/Classes
 
 echo "==> 修改 $POD_SPEC 版本号: $VERSION"
-sed -i '' "11,11s/'.*'/'$VERSION'/g" $POD_SPEC
+
+which_sed=`which sed`
+if [[ $(expr "$which_sed" : '.*/gnu-sed/') -gt 0 ]]; then
+	echo "using gnu-sed"
+	sed -i "11,11s/'.*'/'$VERSION'/g" $POD_SPEC
+else
+	sed -i '' "11,11s/'.*'/'$VERSION'/g" $POD_SPEC
+fi
 
 echo "==> 提交 repo 修改"
 git add .
