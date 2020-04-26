@@ -48,6 +48,6 @@
 /**
  * get current window
  */
-- (UIWindow *)jf_getCurrentWindow;
++ (UIWindow *)jf_getCurrentWindow;
 
 @end

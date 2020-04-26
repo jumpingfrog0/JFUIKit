@@ -83,7 +83,7 @@
     }];
 }
 
-- (UIWindow *)jf_getCurrentWindow {
++ (UIWindow *)jf_getCurrentWindow {
     UIWindow *window = nil;
     // check device
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) { // iPhone
@@ -113,7 +113,7 @@
                 break;
             }
         }
-        if (!window) {  // 如果也没取到keyWindow，拿第一个Window
+        if (!window) {  // if key window is not exist
             window = [UIApplication sharedApplication].windows.firstObject;
         }
     }
