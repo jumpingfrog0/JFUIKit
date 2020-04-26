@@ -53,6 +53,14 @@
                            alpha:alpha];
 }
 
++ (UIColor *)jf_colorFromHex:(NSInteger)hex {
+    return [self jf_colorFromHex:hex alpha:1.0];
+}
+
++ (UIColor *)jf_colorFromHex:(NSInteger)hex alpha:(CGFloat)alpha {
+    return [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16))/255.0 green:((float)((hex & 0xFF00) >> 8))/255.0 blue:((float)(hex & 0xFF))/255.0 alpha:alpha];
+}
+
 + (UIColor *)jf_colorWithHex:(NSString *)hex
 {
     // Remove `#` and `0x`

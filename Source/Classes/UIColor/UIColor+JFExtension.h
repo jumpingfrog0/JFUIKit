@@ -46,6 +46,16 @@
 + (UIColor *)jf_randomColor:(CGFloat)alpha;
 
 /**
+ * 通过 16 进制色值生成 UIColor 对象，只能加 0x 前缀
+ */
++ (UIColor *)jf_colorFromHex:(NSInteger)hex;
+
+/**
+ * 通过 16 进制色值生成 UIColor 对象，只能加 0x 前缀
+ */
++ (UIColor *)jf_colorFromHex:(NSInteger)hex alpha:(CGFloat)alpha;
+
+/**
  *  通过 16 进制色值生成 UIColor 对象, 支持 3，6，8 位，可加 # 或 0x 前缀，如
  *
  *  @param hex 16 进制色值，支持 3，6，8 位，可加 # 或者 0x 前缀，如:
